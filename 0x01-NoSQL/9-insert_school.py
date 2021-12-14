@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
+"""a python module that inserts new document based on kwargs"""
 from typing import Any
 import pymongo
-"""a python module that inserts new document based on kwargs"""
 
 
 def insert_school(mongo_collection, **kwargs) -> Any:
