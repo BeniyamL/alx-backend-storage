@@ -11,7 +11,7 @@ if __name__ == "__main__":
     print("{} logs".format(nbr_logs))
     print("Methods:")
     for mtd in methods:
-        print("\tmethod {} {}".format(
+        print("\tmethod {}: {}".format(
             mtd, log_collection.count_documents({"method": mtd})
             ))
     nbr_checks = log_collection.count_documents(
