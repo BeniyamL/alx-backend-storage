@@ -5,6 +5,7 @@ this includs the method, the number of logs & top 10 most ips
 """
 from pymongo import MongoClient
 
+
 if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
@@ -24,7 +25,7 @@ if __name__ == "__main__":
         {
             "$group": {"_id": "$ip", "total_ips": {"$count": {}}}
         },
-        {"$sort": {"total_ips": -1}},
+        {"$sort": {"total_ips": -1, "_id": 1}},
         {"$limit": 10},
         {"$project": {"ip": "$_id", "total_ips": "$total_ips"}}
     ])
