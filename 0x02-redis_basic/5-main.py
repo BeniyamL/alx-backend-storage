@@ -3,4 +3,4 @@
 
 from web import *
 
-print(get_page("http://slowwly.robertomurray.co.uk"))
+print(get_page("http://google.com"))

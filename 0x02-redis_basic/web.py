@@ -22,7 +22,7 @@ def cache_page(method: Callable) -> Callable:
     @wraps(method)
     def wrapper(args):
         """ a wrapper function to return a page &
-        increment the number of times the page has accessed
+        increment the number of times the page has been accessed
         """
         obj.incr("count:{}" + args)
         in_cache = obj.get("cached_page" + args)
