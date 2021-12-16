@@ -9,7 +9,7 @@ import redis
 from redis import exceptions
 
 
-def count_calls(method: callable) -> Callable:
+def count_calls(method: Callable) -> Callable:
     """
     count_calls - function to count the number of time the method calls
     Arguments:
@@ -27,7 +27,7 @@ def count_calls(method: callable) -> Callable:
     return wrapper
 
 
-def call_history(method: callable) -> callable:
+def call_history(method: Callable) -> Callable:
     """
     call_history - function to store the history of inputs
     & outputs for a function
@@ -49,7 +49,7 @@ def call_history(method: callable) -> callable:
     return wrapper
 
 
-def replay(method: callable) -> None:
+def replay(method: Callable) -> None:
     """
     replay- function to display the history of call of a fun
     Arguments:
