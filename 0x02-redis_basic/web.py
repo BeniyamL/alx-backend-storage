@@ -6,9 +6,10 @@ URL & returns it
 import redis
 import requests
 from functools import wraps
+from typing import Callable
 
 
-def cache_page(method: callable) -> callable:
+def cache_page(method: Callable) -> Callable:
     """
     cache_page - function to cache a given url
     Arguments:
